@@ -1,22 +1,20 @@
 package com.example.primeiro_thymeleaf.model;
 
-import java.time.LocalDateTime;
-import org.springframework.format.annotation.DateTimeFormat;
+import java.sql.Date;
 
 public class Task {
 
     private Long id;
     private String name;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime date;
+    private Date date;
 
     // Construtor vazio (obrigatório para o Spring)
     public Task() {
     }
 
     // Construtor completo
-    public Task(Long id, String name, LocalDateTime date) {
+    public Task(Long id, String name, Date date) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -31,7 +29,7 @@ public class Task {
         return name;
     }
 
-    public LocalDateTime getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -44,7 +42,7 @@ public class Task {
         this.name = name;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }
